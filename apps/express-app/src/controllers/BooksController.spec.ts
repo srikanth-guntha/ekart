@@ -15,7 +15,7 @@ describe('GET /api/books', () => {
     request(server).get('/').expect(404, done);
   });
 
-  it('Check if books list api response has items', (done) => {
+  it('Verify books list api response has items', (done) => {
     request(server)
       .get('/api/searchBooks?searchString=ang')
       .then((res) => {
@@ -24,7 +24,7 @@ describe('GET /api/books', () => {
       });
   });
 
-  it('Check if books list api response has no items', (done) => {
+  it('Verify books list api response has no items', (done) => {
     request(server)
       .get('/api/searchBooks?searchString=uygkjhjhgmjhgcdcgfcvcgrdtrdtfgyhj')
       .then((res) => {
@@ -33,7 +33,7 @@ describe('GET /api/books', () => {
       });
   });
 
-  it('Check if book details are available for a particular bookId', (done) => {
+  it('Verify book info for a particular bookId', (done) => {
     request(server)
       .get('/api/bookinfo?bookId=D3wqAQAAMAAJ')
       .expect(200)
