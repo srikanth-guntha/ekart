@@ -1,0 +1,75 @@
+{
+  "npmScope": "ecommerce",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MmUwYjM1ZTctMmIzYy00N2M4LTkzNDItZjQ4NDYyYzhmMGM2fHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "projects": {
+    "ekart": {
+      "tags": []
+    },
+    "ekart-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ekart"]
+    },
+    "express-app": {
+      "tags": []
+    },
+    "features-billing": {
+      "tags": []
+    },
+    "features-cart": {
+      "tags": []
+    },
+    "features-collection": {
+      "tags": []
+    },
+    "features-search": {
+      "tags": []
+    },
+    "shared-bookinfo": {
+      "tags": []
+    },
+    "shared-dialog": {
+      "tags": []
+    },
+    "shared-ekart-store": {
+      "tags": []
+    },
+    "shared-material": {
+      "tags": []
+    },
+    "shared-services": {
+      "tags": []
+    },
+    "shared-star-rating": {
+      "tags": []
+    },
+    "shared-utils": {
+      "tags": []
+    },
+    "ui-mat-card-list": {
+      "tags": []
+    },
+    "ui-navbar": {
+      "tags": []
+    }
+  }
+}

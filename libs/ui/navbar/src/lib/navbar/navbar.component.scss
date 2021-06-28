@@ -1,0 +1,13 @@
+.toolbar {
+    height: 100vh;
+  }
+  .sidenav {
+    top: 64px;
+  }
+  .sidenav-container {
+    div:first-child {
+      position: relative;
+      z-index: 0;
+    }
+  }
+  
