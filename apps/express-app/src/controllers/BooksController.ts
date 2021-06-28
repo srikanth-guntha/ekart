@@ -7,9 +7,6 @@ export const BooksController = {
         `https://www.googleapis.com/books/v1/volumes?q=${req.query.searchString}`
       )
       .end((err, response) => {
-        if (err) {
-          return console.log(err);
-        }
         res.json(response.body);
       });
   },
@@ -17,9 +14,6 @@ export const BooksController = {
     superagent
       .get(`https://www.googleapis.com/books/v1/volumes/${req.query.bookId}`)
       .end((err, response) => {
-        if (err) {
-          return console.log(err);
-        }
         res.json(response.body);
       });
   },
