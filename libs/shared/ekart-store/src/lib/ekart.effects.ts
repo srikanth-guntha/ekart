@@ -61,6 +61,7 @@ export class searchEffects {
         return action.bookId
           ? this.ekartService.getBookInfo(action.bookId).pipe(
               map((data: Book) => {
+                console.log(data);
                 const obj: Book = { id: '' };
                 obj.id = data.id;
                 obj.volumeInfo = {
@@ -75,6 +76,7 @@ export class searchEffects {
                 return storeBookInfo({ bookInfo: obj });
               }),
               catchError((error) => {
+                console.log(error);
                 return of(
                   loadBookFailure({
                     errorMsg: error.message,

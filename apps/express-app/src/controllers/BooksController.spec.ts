@@ -1,4 +1,3 @@
-  
 import * as request from 'supertest';
 
 describe('GET /api/books', () => {
@@ -6,7 +5,7 @@ describe('GET /api/books', () => {
   beforeEach(() => {
     server = require('../main');
   });
-  
+
   it('responds to /api/searchBooks', (done) => {
     request(server).get('/api/searchBooks/').expect(200, done);
   });
@@ -43,4 +42,23 @@ describe('GET /api/books', () => {
       });
   });
 
+  it('Verify book info failure for a particular bookId', (done) => {
+    request(server)
+      .get('/api/bookinfo?bookId=S3XWMgEAAJ')
+      .expect(503)
+      .then((data) => {
+        expect(data?.body?.error?.msg).toBe('Service Unavailable');
+        done();
+      });
+  });
+
+  it('Verify searchBooks failure', (done) => {
+    request(server)
+      .get(`/api/searchBooks?searchString=`)
+      .expect(400)
+      .then((data) => {
+        expect(data?.body?.error?.msg).toBe('Bad Request');
+        done();
+      });
+  });
 });
